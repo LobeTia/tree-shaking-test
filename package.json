@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "google-closure-compiler-js": "^20160828.0.1",
+    "lite-server": "^2.2.2",
+    "rollup": "^0.34.13",
+    "rollup-plugin-closure-compiler-js": "^1.0.2"
+  },
+  "scripts": {
+    "build-single": "rollup -c ./rollup-config.js -i single.js -o dist/single.js",
+    "build-multiple": "rollup -c ./rollup-config.js -i multiple.js -o dist/multiple.js",
+    "build": "npm run build-single && npm run build-multiple && opendiff dist/single.js dist/multiple.js "
+  },
+  "dependencies": {
+    "install": "^0.8.4",
+    "requirejs": "^2.3.2"
+  }
+}
